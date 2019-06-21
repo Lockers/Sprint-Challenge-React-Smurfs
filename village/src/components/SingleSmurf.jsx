@@ -42,7 +42,7 @@ const Button = Styled.button`
 	text-decoration:none;
     text-shadow:0px -1px 0px #5b6178;
     width: 100px;
-    margin-left: 100px
+
 
   &:hover{
     background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #019ad2), color-stop(1, #33bdef));

@@ -29,10 +29,16 @@ In this challenge, you will create a Single Page Application complete with Clien
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain the differences between `client-side routing` and `server-side routing`.
+  client side routing is where the processing of data is done in the browser on the client side. normally this is faster once first loaded.. Derver side is done on the server, which is the more traditioanl way of serviing individual web pages with their own data 
 - [ ] What does HTTP stand for?
+Hypertext transfer protocal, the way servers and clients or servers and servers communicate with each other
 - [ ] What does CRUD stand for?
+create, read, update, delete  refers to some of the requests we can make for data on servers
+
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+create = Post   read = get  update = put delete=DELETE
 - [ ] Mention three tools we can use to make AJAX requests.
+Fetch, axios, jquerey
 
 
 ## Project Set Up

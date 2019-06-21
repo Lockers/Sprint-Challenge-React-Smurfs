@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import Styled from 'styled-components'
+
 
 const Div = Styled.div`
   display: flex;
@@ -15,13 +16,24 @@ const Div = Styled.div`
   margin: 10px;
   border: 1px solid black;
 `
+const Button = Styled.button`
+  display: flex;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  background: dodgerblue;
+  color: white;
+  margin: 0 auto;
+`
 
 const Smurf = props => {
+  
   return (
     <Div>
-      <Link to='/'><h3>{props.name}</h3></Link>
+      <Link to='/singlesmurf/0'><h3>{props.name}</h3></Link>
       <strong>{props.height} tall</strong>
       <p>{props.age} smurf years old</p>
+      <Button onClick={(event) => props.deleteSmurf(props.id)}>X</Button>
     </Div>
   );
 };

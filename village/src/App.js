@@ -9,10 +9,15 @@ import SingleSmurf from './components/SingleSmurf'
 const Div = Styled.div`
  display: flex;
  flex-direction: column;
- border: solid black;
+ justify-content: center;
+ align-items: center;
+ margin: 0 auto;
  flex-wrap: wrap;
- width: 100%;
+ max-width: 800px;
+ width: 800px;
+ height: auto;
 `
+
 const Nav = Styled.nav`
   display: flex;
   height: auto;
@@ -34,6 +39,11 @@ class App extends Component {
     super(props);
     this.state = {
       smurfs: [],
+      updateSmurf: {
+        name: '',
+        age: '',
+        height: ''
+      }
     };
   }
 
@@ -72,11 +82,11 @@ class App extends Component {
           <NavLink to='/'>Smurfs</NavLink>
           <NavLink to='/smurf-form'>Add Smurf</NavLink>
         </Nav>
-        <div>
+        <Div>
         {
             this.state.smurfs.map(smurf => <Route exact path={`/singlesmurf/${smurf.id}`} render={(props) => <SingleSmurf {...props} smurf={smurf} key={smurf.id} updateSmurf={this.updateSmurf} />} />)
         }
-        </div>
+        </Div>
         <Route path='/smurf-form' component={SmurfForm} />
         <Route exact path='/' render={(props) => <Smurfs smurfs={this.state.smurfs} {...props} deleteSmurf={this.deleteSmurf} getProps={this.getProps} />}  />
       </Div>

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Styled from 'styled-components';
-import SingleSmurf from './SingleSmurf';
+import './Smurf.css'
 
 
 const Div = Styled.div`
@@ -30,13 +30,14 @@ const Button = Styled.button`
 const Smurf = props => {
   
   return (
-    <Div>
-      
-      <Link to={`/singlesmurf/${props.id}`}><h3>{props.name}</h3></Link>
-      <strong>{props.height} tall</strong>
-      <p>{props.age} smurf years old</p>
-      <Button onClick={() => props.deleteSmurf(props.id)}>X</Button>
-    </Div>
+    <Link to={`/singlesmurf/${props.id}`}>
+      <Div>
+        <h3>{props.name}</h3>
+        <strong>{props.height} tall</strong>
+        <p>{props.age} smurf years old</p>
+        <Button onClick={() => props.deleteSmurf(props.id)}>X</Button>
+      </Div>
+    </Link>
   );
 };
 

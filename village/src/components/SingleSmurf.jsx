@@ -1,5 +1,6 @@
 import React from 'react'
 import Styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 const Div = Styled.div`
     display: flex;
@@ -60,7 +61,7 @@ const SingleSmurf = props => {
             <h3>{props.smurf.name}</h3>
             <strong>{props.smurf.height} tall</strong>
             <p>{props.smurf.age} smurf years old</p>
-            <Button onClick={() => props.updateSmurf(props.smurf.id)}>Update</Button>
+            <NavLink to='updateform'><Button onClick={() => props.updateSmurf(props.smurf.id)}>Update</Button></NavLink>
         </Div>
         
     )

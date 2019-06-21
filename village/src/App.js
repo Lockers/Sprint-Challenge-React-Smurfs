@@ -46,10 +46,9 @@ class App extends Component {
       .then(res => {
         this.setState({smurfs: res.data})
       })
-      .catch(err => console.log(err.message))
+      .catch(err => console.log(err.msg))
   }
   deleteSmurf = (id) => {
-    console.log('Delete smurf Firing')
     axios
       .delete(`http://localhost:3333/smurfs/${id}`)
       .then(res => {
@@ -57,8 +56,11 @@ class App extends Component {
           smurfs: res.data
         })
       })
-      .catch(err => console.log(err.message))
+      .catch(err => console.log(err.msg))
     
+  }
+  updateSmurf = (id) => {
+    console.log(id)
   }
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
   // Notice what your map function is looping over and returning inside of Smurfs.
@@ -70,9 +72,13 @@ class App extends Component {
           <NavLink to='/'>Smurfs</NavLink>
           <NavLink to='/smurf-form'>Add Smurf</NavLink>
         </Nav>
-        <Route exact path='/singlesmurf/:id' component={SingleSmurf} />
+        <div>
+        {
+            this.state.smurfs.map(smurf => <Route exact path={`/singlesmurf/${smurf.id}`} render={(props) => <SingleSmurf {...props} smurf={smurf} key={smurf.id} updateSmurf={this.updateSmurf} />} />)
+        }
+        </div>
         <Route path='/smurf-form' component={SmurfForm} />
-        <Route path='/' render={(props) => <Smurfs smurfs={this.state.smurfs} {...props} deleteSmurf={this.deleteSmurf} />}  />
+        <Route exact path='/' render={(props) => <Smurfs smurfs={this.state.smurfs} {...props} deleteSmurf={this.deleteSmurf} getProps={this.getProps} />}  />
       </Div>
     );
   }

@@ -81,10 +81,10 @@ class SmurfForm extends Component {
   }
 
   addSmurf = event => {
-    event.preventDefault();
+    const payload = this.state
     // add code to create the smurf using the api
     axios
-      .post('http://localhost:3333/smurfs', this.state)
+      .post('http://localhost:3333/smurfs', payload)
       .then(res => {
         this.setState({
           name: res.name,
@@ -101,7 +101,7 @@ class SmurfForm extends Component {
       height: ''
     });
   }
-
+ 
   handleInputChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -114,20 +114,20 @@ class SmurfForm extends Component {
           <Input
             onChange={this.handleInputChange}
             placeholder="name"
-            value={this.state.name}
             name="name"
+            type='text'
           />
           <Input
             onChange={this.handleInputChange}
             placeholder="age"
-            value={this.state.age}
             name="age"
+            type='number'
           />
           <Input
             onChange={this.handleInputChange}
             placeholder="height"
-            value={this.state.height}
             name="height"
+            type='number'
           />
           <Button type="submit">Add to the village</Button>
         </Form>

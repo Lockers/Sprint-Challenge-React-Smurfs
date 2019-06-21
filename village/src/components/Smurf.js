@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom'
-import Styled from 'styled-components'
+import { Link, Route } from 'react-router-dom';
+import Styled from 'styled-components';
+import SingleSmurf from './SingleSmurf';
 
 
 const Div = Styled.div`
@@ -30,10 +31,11 @@ const Smurf = props => {
   
   return (
     <Div>
-      <Link to='/singlesmurf/0'><h3>{props.name}</h3></Link>
+      
+      <Link to={`/singlesmurf/${props.id}`}><h3>{props.name}</h3></Link>
       <strong>{props.height} tall</strong>
       <p>{props.age} smurf years old</p>
-      <Button onClick={(event) => props.deleteSmurf(props.id)}>X</Button>
+      <Button onClick={() => props.deleteSmurf(props.id)}>X</Button>
     </Div>
   );
 };

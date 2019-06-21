@@ -5,6 +5,7 @@ import Smurfs from './components/Smurfs';
 import { Route, NavLink } from 'react-router-dom';
 import Styled from 'styled-components'
 import SingleSmurf from './components/SingleSmurf'
+import UpdateSmurf from './components/UpdateSmurf';
 
 const Div = Styled.div`
  display: flex;
@@ -88,7 +89,8 @@ class App extends Component {
         }
         </Div>
         <Route path='/smurf-form' component={SmurfForm} />
-        <Route exact path='/' render={(props) => <Smurfs smurfs={this.state.smurfs} {...props} deleteSmurf={this.deleteSmurf} getProps={this.getProps} />}  />
+        <Route exact path='/' render={(props) => <Smurfs smurfs={this.state.smurfs} {...props} deleteSmurf={this.deleteSmurf} getProps={this.getProps} />} />
+        <Route path='/updatesmurf' component={UpdateSmurf} />
       </Div>
     );
   }

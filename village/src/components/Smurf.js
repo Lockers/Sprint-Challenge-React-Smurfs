@@ -33,7 +33,7 @@ const Smurf = props => {
     <Link to={`/singlesmurf/${props.id}`}>
       <Div>
         <h3>{props.name}</h3>
-        <strong>{props.height} tall</strong>
+        <strong>{props.height}cm tall</strong>
         <p>{props.age} smurf years old</p>
         <Button onClick={() => props.deleteSmurf(props.id)}>X</Button>
       </Div>

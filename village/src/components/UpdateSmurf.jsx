@@ -88,13 +88,14 @@ class UpdateSmurf extends Component {
     render() {
         return (
             <Div>
-                <H1>Add Smurf</H1>
+                <H1>Update Smurf</H1>
                 <Form onSubmit={this.addSmurf}>
                     <Input
                         onChange={this.handleInputChange}
                         placeholder="name"
                         name="name"
                         type='text'
+                        // value={}
                     />
                     <Input
                         onChange={this.handleInputChange}
@@ -108,7 +109,7 @@ class UpdateSmurf extends Component {
                         name="height"
                         type='number'
                     />
-                    <Button type="submit">Add to the village</Button>
+                    <Button type="submit">Update this Smurf</Button>
                 </Form>
             </Div>
         );
